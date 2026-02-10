@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { StageControllerModule } from '../../stage-controller/src/stage-controller.module';
 
 @Module({
   imports: [
+    StageControllerModule,
     ClientsModule.register([
       {
         name: 'STAGE_SERVICE',
