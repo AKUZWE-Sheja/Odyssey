@@ -16,3 +16,6 @@ Stage-Controller Service manages the "Stage State" (Lighting, Curtains, Thermal 
 🛠️ Getting Started
 Backend: cd odyssey-back && npm run start:dev
 Frontend: cd odyseey-front && npm run dev
+
+<img width="1896" height="949" alt="image" src="https://github.com/user-attachments/assets/0c3cf139-344d-4a2c-a1c0-90968b7d0701" />
+
