@@ -159,8 +159,8 @@ export default function OdysseyTheaterPro() {
               <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm">
                 <h2 className="text-xl font-semibold text-gray-900 mb-6 flex items-center gap-2"><LuClock className="text-amber-500" /> Production Schedule</h2>
                 <div className="space-y-4">
-                  <ScheduleItem title="Morning Rehearsal" time="08:30" icon={<LuUsers />} color="bg-blue-50 text-blue-600" />
-                  <ScheduleItem title="Technical Check" time="10:30" icon={<LuWrench />} color="bg-purple-50 text-purple-600" />
+                  <ScheduleItem title="Morning Rehearsal" time="08:30" icon={<LuUsers />} color="bg-blue-50 text-gray-600" />
+                  <ScheduleItem title="Technical Check" time="10:30" icon={<LuWrench />} color="bg-purple-50 text-gray-600" />
                   <ScheduleItem title="Lunch Break" time="12:00" icon={<LuUtensils />} color="bg-gray-50 text-gray-600" />
                 </div>
               </div>
