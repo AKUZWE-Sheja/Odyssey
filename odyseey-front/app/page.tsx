@@ -1,6 +1,5 @@
 'use client';
 import { useEffect, useState } from 'react';
-// Corrected imports using exact Lucide exports found in react-icons
 import { 
   LuLayoutDashboard, 
   LuTheater, 
@@ -10,13 +9,12 @@ import {
   LuUsers, 
   LuChartBar, 
   LuSettings,
-  LuActivity, 
-  LuZap, 
+  LuActivity,  
   LuHeart, 
   LuClock,
   LuDrama,
   LuPanelTop,
-  LuSlidersHorizontal, // Fixed: This is the correct export name
+  LuSlidersHorizontal,
   LuWrench,
   LuUtensils,
   LuMegaphone
@@ -28,7 +26,7 @@ export default function OdysseyTheaterPro() {
   const handleAction = async (action: 'start' | 'stop') => {
     try {
       const response = await fetch(`http://localhost:3000/theatre/${action}`, {
-        method: 'POST', // Critical: This must match your @Post decorator
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -36,7 +34,6 @@ export default function OdysseyTheaterPro() {
   
       if (response.ok) {
         console.log(`Successfully triggered ${action} cue`);
-        // Immediately fetch new data so the UI updates without waiting 2 seconds
         const res = await fetch('http://localhost:3000/theatre/dashboard');
         setData(await res.json());
       }
@@ -48,7 +45,6 @@ export default function OdysseyTheaterPro() {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        // Fetching telemetry from your NestJS Gateway
         const res = await fetch('http://localhost:3000/theatre/dashboard');
         const result = await res.json();
         setData(result);
@@ -67,7 +63,7 @@ export default function OdysseyTheaterPro() {
 
   return (
     <div className="min-h-screen bg-gray-50 font-sans">
-      {/* Static Sidebar - Theater vibe */}
+      {/* Theatre Vibey Sidebar */}
       <aside className="fixed left-0 top-0 h-screen w-64 border-r border-gray-200 bg-white p-6">
         <div className="flex items-center gap-3 mb-10">
           <div className="w-10 h-10 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-xl flex items-center justify-center shadow-lg shadow-yellow-900/10">
