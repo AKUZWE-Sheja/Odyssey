@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/nest-cli",
+  "collection": "@nestjs/schematics",
+  "sourceRoot": "apps/odyssey/src",
+  "compilerOptions": {
+    "deleteOutDir": true,
+    "webpack": true,
+    "tsConfigPath": "apps/odyssey/tsconfig.app.json"
+  },
+  "monorepo": true,
+  "root": "apps/odyssey",
+  "projects": {
+    "odyssey": {
+      "type": "application",
+      "root": "apps/odyssey",
+      "entryFile": "main",
+      "sourceRoot": "apps/odyssey/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/odyssey/tsconfig.app.json"
+      }
+    },
+    "stage-controller": {
+      "type": "application",
+      "root": "apps/stage-controller",
+      "entryFile": "main",
+      "sourceRoot": "apps/stage-controller/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/stage-controller/tsconfig.app.json"
+      }
+    }
+  }
+}
