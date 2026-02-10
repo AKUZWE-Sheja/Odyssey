@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Odyssey | Stage Manager Console',
+  title: 'Odyssey',
   description: 'Real-time theater production and telemetry dashboard',
 }
 
