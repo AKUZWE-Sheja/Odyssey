@@ -9,7 +9,6 @@ A full-stack monorepo for **real-time theater stage management and telemetry**. 
 * **Frontend:** Next.js 15 (Turbopack), Tailwind CSS, Lucide Icons.
 * **Gateway:** NestJS API Gateway (**REST**).
 * **Microservice:** NestJS Stage-Controller (**TCP Communication**).
-* **Language:** TypeScript.
 
 ---
 
@@ -17,12 +16,12 @@ A full-stack monorepo for **real-time theater stage management and telemetry**. 
 
 The system is built on a **Request-Response pattern** over TCP to ensure low-latency communication between services:
 
-1.  **Next.js Frontend (Port 3001):** Polls the Gateway every **2s** for live telemetry updates.
-2.  **Odyssey Gateway (Port 3000):** Orchestrates REST requests and forwards commands to the backend services.
+1.  **Next.js Frontend:** Polls the Gateway every **2s** for live telemetry updates.
+2.  **Odyssey Gateway:** Orchestrates REST requests and forwards commands to the backend services.
 3.  **Stage-Controller Service:** Manages the **"Stage State"**, including:
-    **Lighting** control.
-    **Curtain** automation.
-    **Thermal Safety** monitoring.
+    * **Lighting** control.
+    * **Curtain** automation.
+    * **Thermal Safety** monitoring.
 
 ---
 
