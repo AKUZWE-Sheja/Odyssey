@@ -7,7 +7,7 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: '127.0.0.1',
-      port: 8888, // The internal "backstage" port
+      port: 8888,
     },
   });
   await app.listen();

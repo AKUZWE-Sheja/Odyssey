@@ -6,8 +6,9 @@ async function bootstrap() {
 
   // To allow Next.js frontend to talk to this API
   app.enableCors();
+  const port = process.env.PORT || 3000;
 
-  await app.listen(3000);
-  console.log('Odyssey Gateway (API) is running on http://localhost:3000');
+  await app.listen(port);
+  console.log(`Odyssey Gateway (API) is running on http://localhost:${port}`);
 }
 bootstrap();
