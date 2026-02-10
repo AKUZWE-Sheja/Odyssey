@@ -25,7 +25,7 @@ export default function OdysseyTheaterPro() {
 
   const handleAction = async (action: 'start' | 'stop') => {
     try {
-      const response = await fetch(`http://localhost:3000/theatre/${action}`, {
+      const response = await fetch(`https://odyssey-uphn.onrender.com/theatre/${action}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -34,7 +34,7 @@ export default function OdysseyTheaterPro() {
   
       if (response.ok) {
         console.log(`Successfully triggered ${action} cue`);
-        const res = await fetch('http://localhost:3000/theatre/dashboard');
+        const res = await fetch('https://odyssey-uphn.onrender.com/theatre/dashboard');
         setData(await res.json());
       }
     } catch (error) {
@@ -45,7 +45,7 @@ export default function OdysseyTheaterPro() {
   useEffect(() => {
     const interval = setInterval(async () => {
       try {
-        const res = await fetch('http://localhost:3000/theatre/dashboard');
+        const res = await fetch('https://odyssey-uphn.onrender.com/theatre/dashboard');
         const result = await res.json();
         setData(result);
       } catch (e) { console.error("Connection interrupted"); }

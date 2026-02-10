@@ -14,11 +14,9 @@ export class AppController {
   getDashboardData() {
     return this.client.send({ cmd: 'get_telemetry' }, {}).pipe(
       map(data => {
-        // 1. Calculate health based on microservice temp
         const thermalScore = 100 - (data.tempCelsius - 22) * 2;
         const systemHealth = Math.max(0, Math.min(100, thermalScore));
   
-        // 2. Use the status from Microservice, but check for local overheating too
         let finalStatus = data.systemStatus; 
         if (data.tempCelsius > 35) finalStatus = 'CRITICAL';
   
@@ -29,7 +27,6 @@ export class AppController {
           sceneryLoad: data.isLive ? 75 : 10,
           curtainSpeed: data.curtainSpeed || 'READY',
           
-          // 3. Make the UI markers react to the LIVE status
           activeNodes: [
             { 
               name: 'Spot A', 
